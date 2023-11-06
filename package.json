@@ -1,0 +1,20 @@
+{
+  "name": "olypress",
+  "version": "1.0.0",
+  "description": "olyPress is a blogging platform that allows users create, read, update, and delete blog posts.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Olamide Olanrewaju",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "uuid": "^9.0.1"
+  }
+}

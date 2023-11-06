@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Blog Posts</h1>
+  <% if(posts.length > 0) { %>
+    <div class="row">
+      <% posts.forEach(post => { %>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %></h5>
+              <!-- Display only a snippet of the content -->
+              <p class="card-text">
+                <%= post.content.length > 100 ? post.content.substring(0, 100) + '...' : post.content %>
+              </p>
+              <a href="/edit/<%= post.id %>" class="btn btn-primary">Edit</a>
+              <form action="/delete/<%= post.id %>" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p class="text-center">No posts to display. Start by creating a new post.</p>
+  <% } %>
+</div>
+<%- include('../partials/footer.ejs') %>
